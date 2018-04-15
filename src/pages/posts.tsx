@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import Link from 'gatsby-link'
 import { Post } from '../types'
 
@@ -21,7 +21,6 @@ function Posts({ data }: Props) {
               <Link to={post.frontmatter.path}>{post.frontmatter.title}</Link>
             </h1>
             <h2>{post.frontmatter.date}</h2>
-            <p>{post.excerpt}</p>
           </div>
         ))}
     </div>
