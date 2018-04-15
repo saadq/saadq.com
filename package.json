@@ -1,0 +1,33 @@
+{
+  "name": "saadq.com",
+  "description": "Personal website and portfolio of Saad Quadri",
+  "author": "Saad Quadri <saad@saadq.com>",
+  "license": "MIT",
+  "version": "0.1.0",
+  "scripts": {
+    "build": "gatsby build",
+    "format": "prettier --write \"src/**/*.{ts,tsx}\"",
+    "start": "gatsby develop",
+    "test": "tsc --pretty"
+  },
+  "dependencies": {
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "@types/react-helmet": "latest",
+    "gatsby": "latest",
+    "gatsby-link": "^1.6.40",
+    "gatsby-plugin-catch-links": "^1.0.19",
+    "gatsby-plugin-react-helmet": "^2.0.10",
+    "gatsby-plugin-styled-components": "^2.0.11",
+    "gatsby-plugin-typescript": "latest",
+    "gatsby-source-filesystem": "^1.5.29",
+    "gatsby-transformer-remark": "^1.7.39",
+    "react-helmet": "latest",
+    "styled-components": "^3.2.5",
+    "styled-reset": "^1.3.2"
+  },
+  "devDependencies": {
+    "prettier": "^1.12.0"
+  }
+}
