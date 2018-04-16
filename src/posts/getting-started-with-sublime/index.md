@@ -2,7 +2,6 @@
 path: "/blog/test-post"
 date: "2015-08-23T00:00:00.000Z"
 title: "Getting Started with Sublime Text"
-id: 1
 ---
 
 If you're reading this, you have probably made the decision to use Sublime Text as your editor. Smart choice! Sublime is an amazing editor that is very lightweight, incredibly fast, and highly extendible. It provides a slick interface that is easily customizable and offers IDE-like features.

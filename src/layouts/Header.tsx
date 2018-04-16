@@ -50,9 +50,6 @@ function Header({ mode, switchMode }: Props) {
         <NavLink to="/">Home</NavLink>
         <NavLink to="/blog">Blog</NavLink>
         <NavLink to="/portfolio">Code</NavLink>
-        <MorphReplace onClick={switchMode} width={24} height={24}>
-          {mode === 'light' ? <Sun key="light" /> : <Moon key="dark" />}
-        </MorphReplace>
       </Nav>
     </StyledHeader>
   )

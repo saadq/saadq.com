@@ -10,13 +10,16 @@ injectGlobal`
   body {
     margin: 0;
     font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-    line-height: 1.5;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 1.75;
+    color: #212529;
   }
 `
 
 const Wrapper = styled.div`
   width: 85%;
-  max-width: 850px;
+  max-width: 800px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;

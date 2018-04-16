@@ -1,6 +1,6 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import ReactDisqusComments from 'react-disqus-comments'
+import DisqusComments from 'react-disqus-comments'
 import styled from 'styled-components'
 import { FrontMatter } from '../common/types'
 
@@ -28,7 +28,7 @@ function Post({ data }: Props) {
         <h1>{data.markdownRemark.frontmatter.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
       </div>
-      <ReactDisqusComments
+      <DisqusComments
         shortname="saadq-com"
         identifier={post.frontmatter.title}
         title={post.frontmatter.title}

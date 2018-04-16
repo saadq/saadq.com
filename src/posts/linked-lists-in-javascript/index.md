@@ -2,7 +2,6 @@
 path: "/blog/linked-list"
 date: "2015-11-15T00:00:00.000Z"
 title: "Linked Lists in JavaScript"
-id: 2
 ---
 
 In this post, I'm going to be going over the implementation for a Linked List from scratch. I'm going to assume you already know what a linked list is, but here is a quick recap in case you need some brushing up:
@@ -12,17 +11,11 @@ A linked list is simply a list of objects which are referred to as "nodes". Each
 We are going to be implementing a singly linked list with the following methods:
 
 * `isEmpty()` – Check to see if the list is empty
-
 * `size()` – Get the current length of the list
-
 * `prepend(val)` – Add a node with the given value to the front of the list
-
 * `append(val)` – Add a node with the given value to the end of the list
-
 * `remove(val)` – Remove a node with the given value from the list and return it
-
 * `contains(val)` – Check to see if the list contains a given value
-
 * `print()` – Print out the contents of the list
 
  Before we can get started on implementing those methods, we first have to come up with a way to actually create our list. Our linked list object is going to have one value inside it – a pointer to the head node which we need to be able to traverse our list.

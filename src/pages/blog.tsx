@@ -1,8 +1,12 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { injectGlobal } from 'styled-components'
 import Link from 'gatsby-link'
+import { lightTheme } from '../common/code'
 import { FrontMatter } from '../common/types'
-import 'prismjs/themes/prism.css'
+
+injectGlobal`
+  ${lightTheme}
+`
 
 const Post = styled.div`
   margin: 2em 0;
@@ -20,6 +24,7 @@ const HeadingLink = styled(Link)`
 
 const PostDate = styled.h2`
   font-size: 1em;
+  font-weight: 400;
   margin: 0;
 `
 
