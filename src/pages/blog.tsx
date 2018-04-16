@@ -1,33 +1,40 @@
 import React from 'react'
 import Link from 'gatsby-link'
-import { Post } from '../types'
+import { FrontMatter } from '../common/types'
+
+interface PostNode {
+  node: {
+    excerpt: string
+    frontmatter: FrontMatter
+    id: string
+  }
+}
 
 interface Props {
   data: {
     allMarkdownRemark: {
-      edges: Array<Post>
+      edges: Array<PostNode>
     }
   }
 }
 
-function Posts({ data }: Props) {
+function Blog({ data }: Props) {
+  const posts = data.allMarkdownRemark.edges
   return (
     <div>
-      {data.allMarkdownRemark.edges
-        .filter(edge => edge.node.frontmatter.title.length > 0)
-        .map(({ node: post }) => (
-          <div key={post.id}>
-            <h1>
-              <Link to={post.frontmatter.path}>{post.frontmatter.title}</Link>
-            </h1>
-            <h2>{post.frontmatter.date}</h2>
-          </div>
-        ))}
+      {posts.map(({ node: post }) => (
+        <div key={post.id}>
+          <h1>
+            <Link to={post.frontmatter.path}>{post.frontmatter.title}</Link>
+          </h1>
+          <h2>{post.frontmatter.date}</h2>
+        </div>
+      ))}
     </div>
   )
 }
 
-export default Posts
+export default Blog
 
 export const pageQuery = graphql`
   query PostsQuery {

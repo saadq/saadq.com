@@ -1,20 +1,23 @@
 import React from 'react'
 import Helmet from 'react-helmet'
+import { FrontMatter } from '../common/types'
+
+interface Post {
+  html: string
+  frontmatter: FrontMatter
+}
 
 interface Props {
   data: {
-    markdownRemark: any
-    site: any
+    markdownRemark: Post
   }
 }
 
 function Post({ data }: Props) {
-  const { markdownRemark: post, site } = data
+  const post = data.markdownRemark
   return (
     <div>
-      <Helmet
-        title={`${site.siteMetadata.siteName} - ${post.frontmatter.title}`}
-      />
+      <Helmet title="Saad Quadri" />
       <div>
         <h1>{post.frontmatter.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
@@ -33,11 +36,6 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         path
         title
-      }
-    }
-    site {
-      siteMetadata {
-        siteName
       }
     }
   }

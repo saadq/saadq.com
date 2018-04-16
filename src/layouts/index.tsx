@@ -3,10 +3,7 @@ import Helmet from 'react-helmet'
 import Link from 'gatsby-link'
 import { injectGlobal } from 'styled-components'
 import reset from 'styled-reset'
-
-injectGlobal`
-  ${reset}
-`
+import 'prismjs/themes/prism.css'
 
 interface Props {
   children: () => JSX.Element
@@ -20,9 +17,8 @@ function Layout({ children }: Props) {
         <Link to="/">
           <h3>saadq.com</h3>
         </Link>
-        <Link to="/">Home</Link>
-        <Link to="/posts/">Posts</Link>
-        <Link to="/about/">About</Link>
+        <Link to="/blog">Blog</Link>
+        <a href="/portfolio">Code</a>
       </header>
       {children()}
     </div>
