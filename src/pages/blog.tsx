@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import { FrontMatter } from '../common/types'
+import 'prismjs/themes/prism.css'
 
 interface PostNode {
   node: {
@@ -19,10 +20,9 @@ interface Props {
 }
 
 function Blog({ data }: Props) {
-  const posts = data.allMarkdownRemark.edges
   return (
     <div>
-      {posts.map(({ node: post }) => (
+      {data.allMarkdownRemark.edges.map(({ node: post }) => (
         <div key={post.id}>
           <h1>
             <Link to={post.frontmatter.path}>{post.frontmatter.title}</Link>
