@@ -11,7 +11,15 @@ const StyledFooter = styled.footer`
   opacity: 0.8;
 `
 
-const Copyright = styled.p``
+const CopyrightLink = styled.a`
+  color: #777;
+  transition: color 0.3s ease;
+  text-decoration: none;
+
+  &:hover {
+    color: black;
+  }
+`
 
 const Link = styled.a`
   color: #777;
@@ -27,9 +35,14 @@ const Link = styled.a`
 function Footer() {
   return (
     <StyledFooter>
-      <Copyright>
-        © 2018 Saad Quadri. Built with Gatsby and TypeScript.
-      </Copyright>
+      <p>
+        © 2018 Saad Quadri. Built with{' '}
+        <CopyrightLink href="https://gatsbyjs.org/">Gatsby,</CopyrightLink>{' '}
+        <CopyrightLink href="https://reactjs.org/">React,</CopyrightLink> and{' '}
+        <CopyrightLink href="https://typescriptlang.org/">
+          TypeScript
+        </CopyrightLink>.
+      </p>
       <div>
         <Link href="https://github.com/saadq">GitHub</Link>
         <Link href="https://github.com/saadq">StackOverflow</Link>

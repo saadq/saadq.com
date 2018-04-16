@@ -1,6 +1,11 @@
 import React from 'react'
 import Helmet from 'react-helmet'
+import styled from 'styled-components'
 import { FrontMatter } from '../common/types'
+
+const Wrapper = styled.div`
+  width: 100%;
+`
 
 interface Post {
   html: string
@@ -14,15 +19,14 @@ interface Props {
 }
 
 function Post({ data }: Props) {
-  const post = data.markdownRemark
   return (
-    <div>
+    <Wrapper>
       <Helmet title="Saad Quadri" />
       <div>
-        <h1>{post.frontmatter.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <h1>{data.markdownRemark.frontmatter.title}</h1>
+        <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
       </div>
-    </div>
+    </Wrapper>
   )
 }
 
