@@ -1,9 +1,32 @@
 import React from 'react'
 import styled from 'styled-components'
+import avatar from '../common/assets/sq.jpeg'
 
 const Wrapper = styled.div`
   margin: auto 0;
   color: #666;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @media screen and (max-width: 800px) {
+    flex-direction: column;
+    align-items: center;
+  }
+`
+
+const Avatar = styled.div`
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: url('${avatar}');
+  background-position: center;
+  background-size: cover;
+  margin-right: 5em;
+
+  @media screen and (max-width: 800px) {
+    margin-right: 0;
+  }
 `
 
 const Link = styled.a`
@@ -18,20 +41,23 @@ const Link = styled.a`
 function Home() {
   return (
     <Wrapper>
-      <p>Hello, I'm Saad. I'm a software developer.</p>
-      <p>
-        I'm an incoming intern at{' '}
-        <Link href="https://www.rackspace.com/en-us">Rackspace</Link>.
-        Previously, I've worked at{' '}
-        <Link href="https://mozilla.org">Mozilla</Link>,{' '}
-        <Link href="https://www.codecademy.com">Codecademy</Link>,{' '}
-        <Link href="https://www.ieee.org/">IEEE</Link>, and{' '}
-        <Link href="https://www.jnj.com/">J&amp;J</Link>.
-      </p>
-      <p>
-        You can send me an <Link href="mailto:saad@saadq.com">email</Link> if
-        you'd like to get in touch.
-      </p>
+      <Avatar />
+      <div>
+        <p>Hello, I'm Saad. I'm a software developer.</p>
+        <p>
+          I'm an incoming intern at{' '}
+          <Link href="https://www.rackspace.com/en-us">Rackspace</Link>. <br />
+          Previously, I've worked at{' '}
+          <Link href="https://mozilla.org">Mozilla</Link>,{' '}
+          <Link href="https://www.codecademy.com">Codecademy</Link>,{' '}
+          <Link href="https://www.ieee.org/">IEEE</Link>, and{' '}
+          <Link href="https://www.jnj.com/">J&amp;J</Link>.
+        </p>
+        <p>
+          You can send me an <Link href="mailto:saad@saadq.com">email</Link> if
+          you'd like to get in touch.
+        </p>
+      </div>
     </Wrapper>
   )
 }
