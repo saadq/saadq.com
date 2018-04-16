@@ -1,6 +1,8 @@
 module.exports = {
   siteMetadata: {
-    siteName: 'saadq.com'
+    siteName: 'saadq.com',
+    author: 'Saad Quadri',
+    basePath: 'http://saadq.com'
   },
   plugins: [
     'gatsby-plugin-typescript',
@@ -17,8 +19,17 @@ module.exports = {
     {
       resolve: 'gatsby-transformer-remark',
       options: {
-        plugins: ['gatsby-remark-prismjs']
+        plugins: [
+          'gatsby-remark-prismjs',
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 850
+            }
+          }
+        ]
       }
-    }
+    },
+    'gatsby-plugin-sharp'
   ]
 }

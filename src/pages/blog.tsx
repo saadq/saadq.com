@@ -1,7 +1,27 @@
 import React from 'react'
+import styled from 'styled-components'
 import Link from 'gatsby-link'
 import { FrontMatter } from '../common/types'
 import 'prismjs/themes/prism.css'
+
+const Post = styled.div`
+  margin: 2em 0;
+`
+
+const Heading = styled.h1`
+  font-size: 1.5em;
+  margin: 0;
+`
+
+const HeadingLink = styled(Link)`
+  color: black;
+  text-decoration: none;
+`
+
+const PostDate = styled.h2`
+  font-size: 1em;
+  margin: 0;
+`
 
 interface PostNode {
   node: {
@@ -23,12 +43,14 @@ function Blog({ data }: Props) {
   return (
     <div>
       {data.allMarkdownRemark.edges.map(({ node: post }) => (
-        <div key={post.id}>
-          <h1>
-            <Link to={post.frontmatter.path}>{post.frontmatter.title}</Link>
-          </h1>
-          <h2>{post.frontmatter.date}</h2>
-        </div>
+        <Post key={post.id}>
+          <Heading>
+            <HeadingLink to={post.frontmatter.path}>
+              {post.frontmatter.title}
+            </HeadingLink>
+          </Heading>
+          <PostDate>{post.frontmatter.date}</PostDate>
+        </Post>
       ))}
     </div>
   )
