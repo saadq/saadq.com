@@ -20,7 +20,6 @@ module.exports = {
                 path
                 date
                 title
-                id
               }
             }
           }

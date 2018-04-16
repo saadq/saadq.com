@@ -30,7 +30,7 @@ function Post({ data }: Props) {
       </div>
       <ReactDisqusComments
         shortname="saadq-com"
-        identifier={post.frontmatter.title + post.frontmatter.id}
+        identifier={post.frontmatter.title}
         title={post.frontmatter.title}
       />
     </Wrapper>
@@ -41,12 +41,6 @@ export default Post
 
 export const pageQuery = graphql`
   query BlogPostByPath($path: String!) {
-    site {
-      siteMetadata {
-        siteName
-        basePath
-      }
-    }
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
       id
@@ -54,7 +48,6 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         path
         title
-        id
       }
     }
   }
