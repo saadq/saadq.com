@@ -12,7 +12,7 @@ const lightTheme = css`
   }
 
   pre[class*='language-'] {
-    background: #f7f7f7 !important;
+    background: #fafafa !important;
     color: black !important;
     padding: 1em;
     overflow-x: scroll;

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 const Wrapper = styled.div`
   margin: auto 0;
-  color: #555;
+  color: #666;
 `
 
 const Link = styled.a`
