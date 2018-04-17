@@ -18,29 +18,29 @@ We are going to be implementing a singly linked list with the following methods:
 * `contains(val)` – Check to see if the list contains a given value
 * `print()` – Print out the contents of the list
 
- Before we can get started on implementing those methods, we first have to come up with a way to actually create our list. Our linked list object is going to have one value inside it – a pointer to the head node which we need to be able to traverse our list.
+Before we can get started on implementing those methods, we first have to come up with a way to actually create our list. Our linked list object is going to have one value inside it – a pointer to the head node which we need to be able to traverse our list.
 
 Let's create a constructor function for our list:
 
 ```javascript
 function LinkedList() {
-  this.head = null;
+  this.head = null
 }
 ```
 
 We set `this.head` to `null` because the list will start off without any nodes. We can now create a new linked list by doing the following:
 
 ```javascript
-var list = new LinkedList();
+var list = new LinkedList()
 ```
 
 Doing this would let us create a linked list, but we wouldn't be able to do much with it right now. Let's now implement the methods that were mentioned above. There are two ways we can give methods to lists we create. We put them in the constructor function like this:
 
 ```javascript
 function LinkedList() {
-  this.head = null;
+  this.head = null
 
-  this.isEmpty = function() {};
+  this.isEmpty = function() {}
 }
 ```
 
@@ -48,23 +48,23 @@ Or, we can add the method to the LinkedList's prototype:
 
 ```javascript
 function LinkedList() {
-  this.head = null;
+  this.head = null
 }
 
-LinkedList.prototype.isEmpty = function() {};
+LinkedList.prototype.isEmpty = function() {}
 ```
 
 In both cases, we will be able to use the method the same way by doing `list.isEmpty()`. However, the second approach with the prototypes is usually the preferred way to do it. To explain, let's say we wanted to create two lists:
 
 ```javascript
 function LinkedList() {
-  this.head = null;
+  this.head = null
 
-  this.isEmpty = function() {};
+  this.isEmpty = function() {}
 }
 
-var list1 = new LinkedList();
-var list2 = new LinkedList();
+var list1 = new LinkedList()
+var list2 = new LinkedList()
 ```
 
 If we were to do it like this, each `LinkedList` instance would have its **own** `isEmpty()` method. Everytime we create a new list, each method will get redeclared for each instance and it will be worse on memory.
@@ -73,16 +73,16 @@ The second approach doesn't suffer from this:
 
 ```javascript
 function LinkedList() {
-  this.head = null;
+  this.head = null
 }
 
-LinkedList.prototype.isEmpty = function() {};
+LinkedList.prototype.isEmpty = function() {}
 
-var list1 = new LinkedList();
-var list2 = new LinkedList();
+var list1 = new LinkedList()
+var list2 = new LinkedList()
 ```
 
-When we have the function defined on the prototype, the function is only in memory in *one* place, and is accessibly by every instance of a LinkedList. So using the `prototype` will let you create methods that are available to each instance without having to create the same methods multiple times. In the case where you want to create multiple instances, using prototypes is a lot more efficient.
+When we have the function defined on the prototype, the function is only in memory in _one_ place, and is accessibly by every instance of a LinkedList. So using the `prototype` will let you create methods that are available to each instance without having to create the same methods multiple times. In the case where you want to create multiple instances, using prototypes is a lot more efficient.
 
 Now that we've gotten that out of the way, let's start adding some methods to the LinkedList `prototype`.
 
@@ -92,8 +92,8 @@ An easy method. When we create a new list, `this.head` is initialized to `null`.
 
 ```javascript
 LinkedList.prototype.isEmpty = function() {
-  return this.head === null;
-};
+  return this.head === null
+}
 ```
 
 ## size()
@@ -105,24 +105,25 @@ We can use `this.head` as our starting point, and keep going to the `next` node 
 ```javascript
 LinkedList.prototype.size = function() {
   if (this.isEmpty()) {
-    return 0;
+    return 0
   }
 
-  var count = 0;
-  var current = this.head;
+  var count = 0
+  var current = this.head
 
   while (current !== null) {
-    count++; // Increment the count
-    current = current.next; // Go to the next item in the list
+    count++ // Increment the count
+    current = current.next // Go to the next item in the list
   }
 
-  return count;
-};
+  return count
+}
 ```
 
 Because JavaScript has "truthiness", we could also just do `while (current)` instead of `while (current !== null)`.
 
 ## prepend(val)
+
 To add a node to the front of the list, there are a few steps we need to do. First, We need to create the node that will be added. After that, we want to set it as the new `head` variable. We also have to make sure we make it's `next` value set to the original `head`.
 
 So if we had a list that looked like this:
@@ -165,14 +166,15 @@ LinkedList.prototype.prepend = function(val) {
   var newNode = {
     data: val,
     next: this.head
-  };
+  }
 
   // Now, just update this.head to point to our new node
-  this.head = newNode;
-};
+  this.head = newNode
+}
 ```
 
 ## append(val)
+
 There are a few steps to adding a value to the end of a linked list. First, we have to create the node which will be added:
 
 ```javascript
@@ -180,8 +182,8 @@ LinkedList.prototype.append = function(val) {
   var newNode = {
     data: val,
     next: null
-  };
-};
+  }
+}
 ```
 
 We set `next` to `null` because this node is going to be added to the end of the list, and the last node of a list should point to `null`.
@@ -193,41 +195,42 @@ LinkedList.prototype.append = function(val) {
   var newNode = {
     data: val,
     next: null
-  };
+  }
 
   if (this.isEmpty()) {
-    this.head = newNode;
+    this.head = newNode
   }
-};
+}
 ```
 
-In the case that our list is *not* empty, we will need to traverse to the end of the list, and make the last node point to this new node. Once again, we will be using a `current` variable so that we don't modify the pointer to our head node.
+In the case that our list is _not_ empty, we will need to traverse to the end of the list, and make the last node point to this new node. Once again, we will be using a `current` variable so that we don't modify the pointer to our head node.
 
 ```javascript
 LinkedList.prototype.append = function(val) {
   var newNode = {
     data: val,
     next: null
-  };
+  }
 
   if (this.isEmpty()) {
-    this.head = newNode;
+    this.head = newNode
   } else {
     // Get a reference to the first node
-    var current = this.head;
+    var current = this.head
 
     // Traverse to the end of the list
     while (current.next) {
-      current = current.next;
+      current = current.next
     }
 
     // Set the `next` value of the last node in the list to point to newNode
-    current.next = newNode;
+    current.next = newNode
   }
-};
+}
 ```
 
 ## remove(val)
+
 There are several different types of remove methods we could do with a linked list. We could remove by index, remove by given node, or remove by given value. For the purposes of this example, we are going to be removing by given value.
 
 First, we need to make sure that the value is actually in the list (otherwise there will be nothing to remove!). Using our `contains` method will make it easy to check if a value is in the list (the `contains` method hasn't been implemented yet, but we will fix that shortly).
@@ -235,15 +238,15 @@ First, we need to make sure that the value is actually in the list (otherwise th
 ```javascript
 LinkedList.prototype.remove = function(val) {
   if (!this.contains(val)) {
-    return;
+    return
   }
-};
+}
 ```
 
 If the value is in the list, there are two cases we need to account for:
 
-1. The node to be removed is the `head` node
-2. The node to be removed is somewhere else in the list
+1.  The node to be removed is the `head` node
+2.  The node to be removed is somewhere else in the list
 
 If we had a list like this:
 
@@ -266,25 +269,25 @@ Because nothing is pointing to the node with a value of `5`, it will be removed 
 ```javascript
 LinkedList.prototype.remove = function(val) {
   if (!this.contains(val)) {
-    return;
+    return
   }
 
-  var current = this.head;
-  var nodeToBeRemoved;
+  var current = this.head
+  var nodeToBeRemoved
 
   // If the head node is the node to be removed
   if (current.data === val) {
-    nodeToBeRemoved = current;
-    this.head = nodeToBeRemoved.next; // Make head point to the next node
-    nodeToBeRemoved.next = null; // Remove the `next` pointer from the node that was removed
+    nodeToBeRemoved = current
+    this.head = nodeToBeRemoved.next // Make head point to the next node
+    nodeToBeRemoved.next = null // Remove the `next` pointer from the node that was removed
   }
 
   // Return the node that we just removed
-  return nodeToBeRemoved;
-};
+  return nodeToBeRemoved
+}
 ```
 
-Let's say the node we wanted to remove was *not* the first node in the list. If we wanted to remove `[15]` from this list:
+Let's say the node we wanted to remove was _not_ the first node in the list. If we wanted to remove `[15]` from this list:
 
 ```
 [5] ––> [10] ––> [15] ––> [20] ––> null
@@ -297,108 +300,110 @@ all we have to do is traverse the list until we reach `[15]`. Then, we need to m
 ```javascript
 LinkedList.prototype.remove = function(val) {
   if (!this.contains(val)) {
-    return;
+    return
   }
 
-  var current = this.head;
-  var nodeToBeRemoved;
+  var current = this.head
+  var nodeToBeRemoved
 
   if (current.data === val) {
-    nodeToBeRemoved = current;
-    this.head = nodeToBeRemoved.next;
-    nodeToBeRemoved.next = null;
+    nodeToBeRemoved = current
+    this.head = nodeToBeRemoved.next
+    nodeToBeRemoved.next = null
   } else {
     // Keep track of the previous node
-    var previous = null;
+    var previous = null
 
     // Traverse the list until we get to the node to be removed
     while (current.data !== val) {
-      previous = current;
-      current = current.next;
+      previous = current
+      current = current.next
     }
 
     // Save a reference to the node we will remove so that we can return it
-    var nodeToBeRemoved = current;
+    var nodeToBeRemoved = current
 
     // After doing this, nothing will be pointing to `current` which will delete that node
-    previous.next = current.next;
+    previous.next = current.next
   }
 
   // Return the node that we just removed
-  return nodeToBeRemoved;
-};
+  return nodeToBeRemoved
+}
 ```
 
 ## contains(val)
+
 Let's implement this `contains` method now. We just need to traverse through the list, and return `true` if we find the given value in the list or return `false` if we don't find it. If the list is empty, don't bother traversing through the array, just return `false`.
 
 ```javascript
 LinkedList.prototype.contains = function(val) {
   if (this.isEmpty()) {
-    return false;
+    return false
   }
 
-  var current = this.head;
+  var current = this.head
 
   // Traverse through the list and check the data value in each node
   while (current) {
     if (current.data === val) {
-      return true;
+      return true
     }
-    current = current.next;
+    current = current.next
   }
 
-  return false;
-};
+  return false
+}
 ```
 
 ## print()
+
 To print the list, we will just do a simple traversal and add each value to our `output` variable as we go along. We print the output at the end with `console.log`. Our output will be in this format: `[5, 10, 15, 20]`. If the list is empty, we will simply print `[]`.
 
 ```javascript
 LinkedList.prototype.print = function() {
   if (this.isEmpty()) {
-    console.log('[]');
-    return;
+    console.log('[]')
+    return
   }
 
-  var output = '[';
-  var current = this.head;
+  var output = '['
+  var current = this.head
 
   // Traverse through the list and add each data value to the output
   while (current) {
-    output += current.data;
+    output += current.data
     if (current.next) {
-      output += ', '; // Add a comma if there is a next value
+      output += ', ' // Add a comma if there is a next value
     }
-    current = current.next;
+    current = current.next
   }
 
-  output += ']';
-  console.log(output);
-};
+  output += ']'
+  console.log(output)
+}
 ```
 
 And there we go! We now have finished a linked list. Let's try our functions out and see if they work!
 
 ```javascript
-var list = new LinkedList();
+var list = new LinkedList()
 
-list.append(20);
-list.append(30);
-list.append(40);
-list.append(50);
-list.prepend(10);
+list.append(20)
+list.append(30)
+list.append(40)
+list.append(50)
+list.prepend(10)
 
-list.print(); // [10, 20, 30, 40, 50]
+list.print() // [10, 20, 30, 40, 50]
 
-list.remove(40);
-list.remove(10);
+list.remove(40)
+list.remove(10)
 
-list.print(); // [20, 30, 50]
+list.print() // [20, 30, 50]
 
-console.log(list.contains(20)); // true
-console.log(list.contains(40)); // false
-console.log(list.size()); // 3
-console.log(list.isEmpty()); // false
+console.log(list.contains(20)) // true
+console.log(list.contains(40)) // false
+console.log(list.size()) // 3
+console.log(list.isEmpty()) // false
 ```
