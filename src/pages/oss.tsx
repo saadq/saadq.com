@@ -18,10 +18,12 @@ const RepoLink = styled.a`
   font-size: 14px;
   color: inherit;
   display: block;
-  margin-bottom: 20px;
   text-decoration: none;
+  padding-bottom: 20px;
 
   @media screen and (max-width: 768px) {
+    padding-top: 20px;
+    border-bottom: 1px solid #ddd;
     display: block;
   }
 `
