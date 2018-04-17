@@ -45,7 +45,9 @@ function Footer() {
       </p>
       <div>
         <Link href="https://github.com/saadq">GitHub</Link>
-        <Link href="https://stackoverflow.com/users/4033215/saadq">StackOverflow</Link>
+        <Link href="https://stackoverflow.com/users/4033215/saadq">
+          StackOverflow
+        </Link>
         <Link href="https://youtube.com/saadq">YouTube</Link>
         <Link href="https://twitter.com/saadquadri">Twitter</Link>
       </div>

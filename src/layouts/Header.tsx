@@ -29,8 +29,11 @@ const NavLink = styled(Link)`
   color: #777;
   text-decoration: none;
   margin-right: 25px;
-  text-transform: lowercase;
   transition: color 0.3s ease;
+
+  &:last-child {
+    margin-right: 0;
+  }
 
   &:hover {
     color: black;
@@ -49,7 +52,7 @@ function Header({ mode, switchMode }: Props) {
       <Nav>
         <NavLink to="/">Home</NavLink>
         <NavLink to="/blog">Blog</NavLink>
-        <NavLink to="/portfolio">Code</NavLink>
+        <NavLink to="/oss">OSS</NavLink>
       </Nav>
     </StyledHeader>
   )

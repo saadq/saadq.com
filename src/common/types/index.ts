@@ -10,4 +10,12 @@ interface Site {
   }
 }
 
-export { FrontMatter, Site }
+interface Repository {
+  name: string
+  description: string
+  stargazers_count: number
+  html_url: string
+  [key: string]: any
+}
+
+export { FrontMatter, Site, Repository }

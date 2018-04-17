@@ -19,7 +19,7 @@ injectGlobal`
 
 const Wrapper = styled.div`
   width: 85%;
-  max-width: 800px;
+  max-width: 850px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
