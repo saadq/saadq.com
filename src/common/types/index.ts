@@ -15,6 +15,7 @@ interface Repository {
   description: string
   stargazers_count: number
   html_url: string
+  fork: boolean
   [key: string]: any
 }
 

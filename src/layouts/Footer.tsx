@@ -43,7 +43,7 @@ function Footer() {
   return (
     <StyledFooter>
       <p>
-        © 2018 Saad Quadri. Built with{' '}
+        © {new Date().getFullYear()} Saad Quadri. Built with{' '}
         <CopyrightLink href="https://gatsbyjs.org/">Gatsby,</CopyrightLink>{' '}
         <CopyrightLink href="https://reactjs.org/">React,</CopyrightLink> and{' '}
         <CopyrightLink href="https://typescriptlang.org/">
