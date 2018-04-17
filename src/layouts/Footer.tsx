@@ -57,6 +57,7 @@ function Footer() {
         </Link>
         <Link href="https://youtube.com/saadq">YouTube</Link>
         <Link href="https://twitter.com/saadquadri">Twitter</Link>
+        <Link href="https://linkedin.com/in/saadquadri">LinkedIn</Link>
       </SocialLinks>
     </StyledFooter>
   )

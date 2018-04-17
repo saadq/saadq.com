@@ -45,12 +45,7 @@ const NavLink = styled(Link)`
   }
 `
 
-interface Props {
-  mode: 'light' | 'dark'
-  switchMode: () => void
-}
-
-function Header({ mode, switchMode }: Props) {
+function Header() {
   return (
     <StyledHeader>
       <Logo to="/">saadq</Logo>

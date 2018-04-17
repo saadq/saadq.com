@@ -61,7 +61,7 @@ class OSS extends React.Component<{}, State> {
   async componentDidMount() {
     try {
       this.setState({ loading: true })
-      const response = await fetch('https://api.github.com/users/saadq/repos')
+      const response = await fetch('https://api.github.com/users/saadq/repos?per_page=100')
       const repos: Array<Repository> = await response.json()
       const sortedRepos = repos.sort(
         (a, b) => b.stargazers_count - a.stargazers_count

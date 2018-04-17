@@ -36,34 +36,15 @@ interface Props {
   children: () => JSX.Element
 }
 
-interface State {
-  mode: 'light' | 'dark'
-}
-
-class Layout extends React.Component<Props, State> {
-  constructor(props: Props) {
-    super(props)
-    const hours = new Date().getHours()
-    const mode = hours > 6 && hours < 20 ? 'light' : 'dark'
-    this.state = { mode }
-  }
-
-  switchMode = () => {
-    this.setState(prevState => ({
-      mode: prevState.mode === 'light' ? 'dark' : 'light'
-    }))
-  }
-
-  render() {
-    return (
-      <Wrapper>
-        <Helmet title="Saad Quadri" />
-        <Header switchMode={this.switchMode} mode={this.state.mode} />
-        <Main>{this.props.children()}</Main>
-        <Footer />
-      </Wrapper>
-    )
-  }
+function Layout({ children }: Props) {
+  return (
+    <Wrapper>
+      <Helmet title="Saad Quadri" />
+      <Header />
+      <Main>{children()}</Main>
+      <Footer />
+    </Wrapper>
+  )
 }
 
 export default Layout
