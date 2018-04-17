@@ -54,7 +54,7 @@ function Blog({ data }: Props) {
 
 export default Blog
 
-export const pageQuery = graphql`
+export const query = graphql`
   query PostsQuery {
     allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
       edges {
