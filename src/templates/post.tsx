@@ -6,6 +6,7 @@ import { FrontMatter } from '../common/types'
 
 const Wrapper = styled.div`
   width: 100%;
+  font-size: 16px;
 
   a {
     color: inherit;
