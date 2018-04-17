@@ -26,6 +26,7 @@ const PostDate = styled.h2`
   font-size: 1em;
   font-weight: 400;
   margin: 0;
+  line-height: 1;
 `
 
 interface PostNode {
