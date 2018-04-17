@@ -6,6 +6,10 @@ import { FrontMatter } from '../common/types'
 
 const Wrapper = styled.div`
   width: 100%;
+
+  a {
+    color: inherit;
+  }
 `
 
 interface Post {

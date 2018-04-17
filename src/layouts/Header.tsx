@@ -1,8 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import Link from 'gatsby-link'
-import { MorphReplace } from 'react-svg-morph'
-import { Moon, Sun } from '../common/components'
 
 const StyledHeader = styled.header`
   display: flex;

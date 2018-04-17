@@ -1,8 +1,0 @@
-:not(pre) > code[class*='language-'] {
-  background: transparent !important;
-}
-
-pre[class*="language-"] {
-  background: #fafafa !important;
-  color: black !important;
-}

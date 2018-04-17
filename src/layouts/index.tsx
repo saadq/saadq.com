@@ -5,6 +5,7 @@ import styled, { injectGlobal } from 'styled-components'
 import reset from 'styled-reset'
 import Header from './Header'
 import Footer from './Footer'
+import highlighting from '../common/highlighting'
 
 injectGlobal`
   body {
@@ -15,6 +16,8 @@ injectGlobal`
     line-height: 1.75;
     color: #212529;
   }
+
+  ${highlighting}
 `
 
 const Wrapper = styled.div`

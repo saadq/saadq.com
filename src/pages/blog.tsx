@@ -1,12 +1,7 @@
 import React from 'react'
 import styled, { injectGlobal } from 'styled-components'
 import Link from 'gatsby-link'
-import { lightTheme } from '../common/code'
 import { FrontMatter } from '../common/types'
-
-injectGlobal`
-  ${lightTheme}
-`
 
 const Post = styled.div`
   margin: 2em 0;
