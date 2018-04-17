@@ -18,6 +18,12 @@ const lightTheme = css`
     overflow-x: scroll;
     font-weight: 300 !important;
   }
+
+  .token {
+    &.comment {
+      color: #888;
+    }
+  }
 `
 
 const darkTheme = css``
