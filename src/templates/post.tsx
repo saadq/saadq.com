@@ -27,7 +27,7 @@ function Post({ data }: Props) {
   const post = data.markdownRemark
   return (
     <Wrapper>
-      <Helmet title="Saad Quadri" />
+      <Helmet title={`Saad Quadri | ${post.frontmatter.title}`} />
       <div>
         <h1>{data.markdownRemark.frontmatter.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />

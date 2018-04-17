@@ -1,4 +1,5 @@
 import React from 'react'
+import Helmet from 'react-helmet'
 import styled, { injectGlobal } from 'styled-components'
 import Link from 'gatsby-link'
 import { FrontMatter } from '../common/types'

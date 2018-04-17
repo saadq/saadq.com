@@ -4,6 +4,7 @@ import Link from 'gatsby-link'
 import styled, { injectGlobal } from 'styled-components'
 import Header from './Header'
 import Footer from './Footer'
+import { generateTitle } from '../common/util'
 import highlighting from '../common/highlighting'
 
 injectGlobal`
@@ -36,12 +37,13 @@ const Main = styled.main`
 
 interface Props {
   children: () => JSX.Element
+  location: Location
 }
 
-function Layout({ children }: Props) {
+function Layout({ children, location }: Props) {
   return (
     <Wrapper>
-      <Helmet title="Saad Quadri" />
+      <Helmet title={generateTitle(location)} />
       <Header />
       <Main>{children()}</Main>
       <Footer />

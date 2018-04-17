@@ -1,4 +1,5 @@
 import React from 'react'
+import Helmet from 'react-helmet'
 import styled from 'styled-components'
 import { Repository } from '../common/types'
 
@@ -58,18 +59,25 @@ class OSS extends React.Component<{}, State> {
     loading: false
   }
 
-  async componentDidMount() {
-    try {
-      this.setState({ loading: true })
-      const response = await fetch('https://api.github.com/users/saadq/repos?per_page=100')
-      const repos: Array<Repository> = await response.json()
-      const sortedRepos = repos.sort(
-        (a, b) => b.stargazers_count - a.stargazers_count
-      )
-      this.setState({ repos: sortedRepos, loading: false })
-    } catch (err) {
-      this.setState({ repos: [], loading: false })
-    }
+  fetchRepos() {
+    return fetch('https://api.github.com/users/saadq/repos?per_page=100')
+      .then(response => response.json())
+      .then((repos: Array<Repository>) => {
+        return repos
+          .filter(
+            repo =>
+              !repo.fork ||
+              (repo.name.includes('Materialize') || repo.name.includes('blyss'))
+          )
+          .sort((a, b) => b.stargazers_count - a.stargazers_count)
+      })
+  }
+
+  componentDidMount() {
+    this.setState({ loading: true })
+    this.fetchRepos().then(repos => {
+      this.setState({ repos, loading: false })
+    })
   }
 
   render() {
