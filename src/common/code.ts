@@ -9,6 +9,7 @@ const lightTheme = css`
 
   :not(pre) > code[class*='language-'] {
     background: transparent !important;
+    font-size: 0.9em;
   }
 
   pre[class*='language-'] {
