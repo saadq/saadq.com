@@ -31,6 +31,11 @@ const NavLink = styled(Link)`
   margin-right: 25px;
   transition: color 0.3s ease;
 
+  &.active {
+    color: black;
+    font-weight: bold;
+  }
+
   &:last-child {
     margin-right: 0;
   }
@@ -50,9 +55,15 @@ function Header({ mode, switchMode }: Props) {
     <StyledHeader>
       <Logo to="/">saadq</Logo>
       <Nav>
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/blog">Blog</NavLink>
-        <NavLink to="/oss">OSS</NavLink>
+        <NavLink exact to="/" activeClassName="active">
+          Home
+        </NavLink>
+        <NavLink exact to="/blog" activeClassName="active">
+          Blog
+        </NavLink>
+        <NavLink exact to="/oss" activeClassName="active">
+          OSS
+        </NavLink>
       </Nav>
     </StyledHeader>
   )

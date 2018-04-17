@@ -29,6 +29,7 @@ const Wrapper = styled.div`
 const Main = styled.main`
   flex-grow: 1;
   display: flex;
+  width: 100%;
 `
 
 interface Props {

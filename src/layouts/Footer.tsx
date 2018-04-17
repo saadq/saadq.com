@@ -21,6 +21,13 @@ const CopyrightLink = styled.a`
   }
 `
 
+const SocialLinks = styled.div`
+  @media screen and (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+  }
+`
+
 const Link = styled.a`
   color: #777;
   transition: color 0.3s ease;
@@ -43,14 +50,14 @@ function Footer() {
           TypeScript
         </CopyrightLink>.
       </p>
-      <div>
+      <SocialLinks>
         <Link href="https://github.com/saadq">GitHub</Link>
         <Link href="https://stackoverflow.com/users/4033215/saadq">
           StackOverflow
         </Link>
         <Link href="https://youtube.com/saadq">YouTube</Link>
         <Link href="https://twitter.com/saadquadri">Twitter</Link>
-      </div>
+      </SocialLinks>
     </StyledFooter>
   )
 }
