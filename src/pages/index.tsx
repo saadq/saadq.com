@@ -2,10 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import avatar from '../common/assets/sq.jpeg'
 
-interface StyleProps {
-  imageLoaded: boolean
-}
-
 const Wrapper = styled.div`
   margin: auto 0;
   color: #666;
