@@ -6,9 +6,9 @@
   "version": "0.1.0",
   "scripts": {
     "prebuild": "npm run clean",
-    "build": "gatsby build",
+    "build": "gatsby build --prefix-paths",
     "clean": "trash .cache dist public",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
+    "deploy": "npm run build && gh-pages -d public",
     "format": "prettier --write \"src/**/*.{ts,tsx,md}\"",
     "serve": "gatsby serve",
     "start": "gatsby develop",

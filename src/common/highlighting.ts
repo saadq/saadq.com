@@ -16,7 +16,7 @@ const theme = css`
     background: #fafafa !important;
     color: black !important;
     padding: 1em;
-    overflow-x: scroll;
+    overflow-x: auto;
     font-weight: 300 !important;
   }
 
