@@ -8,6 +8,10 @@ import { generateTitle } from '../common/util'
 import highlighting from '../common/highlighting'
 
 injectGlobal`
+  * {
+    box-sizing: border-box;
+  }
+
   body {
     margin: 0;
     font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;

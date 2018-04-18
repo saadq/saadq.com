@@ -7,13 +7,6 @@ const Wrapper = styled.div`
   width: 100%;
 `
 
-const Repositories = styled.div`
-  display: block;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-`
-
 const RepoLink = styled.a`
   font-size: 14px;
   color: inherit;
@@ -90,15 +83,13 @@ class OSS extends React.Component<{}, State> {
     return (
       <Wrapper>
         <h1>Open Source Software</h1>
-        <Repositories>
-          {this.state.repos.map((repo, i) => (
-            <RepoLink href={repo.html_url} key={i}>
-              <Title>{repo.name}</Title>
-              <Stars>{repo.stargazers_count} ★</Stars>
-              <Description>{repo.description}</Description>
-            </RepoLink>
-          ))}
-        </Repositories>
+        {this.state.repos.map((repo, i) => (
+          <RepoLink href={repo.html_url} key={i}>
+            <Title>{repo.name}</Title>
+            <Stars>{repo.stargazers_count} ★</Stars>
+            <Description>{repo.description}</Description>
+          </RepoLink>
+        ))}
       </Wrapper>
     )
   }
