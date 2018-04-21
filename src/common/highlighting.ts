@@ -4,7 +4,7 @@ const theme = css`
   :not(pre) > code[class*='language-'],
   pre[class*='language-'] {
     font-size: 0.8em;
-    font-family: monospace;
+    font-family: Consolas, monospace;
   }
 
   :not(pre) > code[class*='language-'] {

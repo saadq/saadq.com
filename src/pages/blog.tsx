@@ -4,11 +4,18 @@ import styled, { injectGlobal } from 'styled-components'
 import Link from 'gatsby-link'
 import { FrontMatter } from '../common/types'
 
+const Wrapper = styled.div`
+  width: 100%;
+  margin-top: 2.5em;
+`
+
 const PostLink = styled.a`
   margin: 2em 0;
   display: block;
   color: inherit;
   text-decoration: none;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 2em;
 `
 
 const PostTitle = styled.h2`
@@ -40,15 +47,14 @@ interface Props {
 
 function Blog({ data }: Props) {
   return (
-    <div>
-      <h1>Blog Posts</h1>
+    <Wrapper>
       {data.allMarkdownRemark.edges.map(({ node: post }) => (
         <PostLink href={post.frontmatter.path} key={post.id}>
           <PostTitle>{post.frontmatter.title}</PostTitle>
           <PostDate>{post.frontmatter.date}</PostDate>
         </PostLink>
       ))}
-    </div>
+    </Wrapper>
   )
 }
 
