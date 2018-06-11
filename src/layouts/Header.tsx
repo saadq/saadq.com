@@ -54,8 +54,8 @@ function Header() {
         <NavLink exact to="/blog" activeClassName="active">
           Blog
         </NavLink>
-        <NavLink exact to="/oss" activeClassName="active">
-          OSS
+        <NavLink exact to="/projects" activeClassName="active">
+          Projects
         </NavLink>
       </Nav>
     </StyledHeader>

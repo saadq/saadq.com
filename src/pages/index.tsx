@@ -43,7 +43,7 @@ function Home() {
       <div>
         <p>Hello, I'm Saad. I'm a software developer.</p>
         <p>
-          I'm an incoming intern at{' '}
+          I'm an intern at{' '}
           <Link href="https://www.rackspace.com/en-us">Rackspace</Link>. <br />
           Previously, I've worked at{' '}
           <Link href="https://mozilla.org">Mozilla</Link>,{' '}

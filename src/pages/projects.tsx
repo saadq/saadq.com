@@ -5,6 +5,7 @@ import { Repository } from '../common/types'
 
 const Wrapper = styled.div`
   width: 100%;
+  margin-top: 25px;
 `
 
 const RepoLink = styled.a`
@@ -48,7 +49,7 @@ interface State {
   repos: Array<Repository>
 }
 
-class OSS extends React.Component<{}, State> {
+class Projects extends React.Component<{}, State> {
   state: State = {
     repos: [],
     loading: false
@@ -82,7 +83,6 @@ class OSS extends React.Component<{}, State> {
 
     return (
       <Wrapper>
-        <h1>Open Source Software</h1>
         {this.state.repos.map((repo, i) => (
           <RepoLink href={repo.html_url} key={i}>
             <Title>{repo.name}</Title>
@@ -95,4 +95,4 @@ class OSS extends React.Component<{}, State> {
   }
 }
 
-export default OSS
+export default Projects
