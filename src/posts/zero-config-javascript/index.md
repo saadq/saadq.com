@@ -1,6 +1,6 @@
 ---
 path: "/blog/zero-config-javascript"
-date: "2015-11-15T00:00:00.000Z"
+date: "2018-06-11T04:39:52.409Z"
 title: "Zero Config JavaScript"
 ---
 
