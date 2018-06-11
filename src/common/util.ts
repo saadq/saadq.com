@@ -5,16 +5,11 @@ function capitalize(str: string) {
 function generateTitle(location: Location) {
   const base = 'Saad Quadri'
 
-  switch (location.pathname) {
-    case '/':
-      return base
-
-    case '/oss':
-      return `${base} | OSS`
-
-    default:
-      return `${base} | ${capitalize(location.pathname.slice(1))}`
+  if (location.pathname === '/') {
+    return base
   }
+
+  return `${base} | ${capitalize(location.pathname.slice(1))}`
 }
 
 export { capitalize, generateTitle }
