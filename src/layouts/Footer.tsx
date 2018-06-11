@@ -43,7 +43,8 @@ function Footer() {
   return (
     <StyledFooter>
       <p>
-        © {new Date().getFullYear()} Saad Quadri. <br /> Built with{' '}
+        © {new Date().getFullYear()} Saad Quadri. <br />
+        Built with{' '}
         <CopyrightLink href="https://gatsbyjs.org/">Gatsby,</CopyrightLink>{' '}
         <CopyrightLink href="https://reactjs.org/">React,</CopyrightLink> and{' '}
         <CopyrightLink href="https://typescriptlang.org/">
@@ -51,6 +52,7 @@ function Footer() {
         </CopyrightLink>.
       </p>
       <SocialLinks>
+        <Link href="https://github.com/saadq/saadq.com">View Source</Link>
         <Link href="https://github.com/saadq">GitHub</Link>
         <Link href="https://stackoverflow.com/users/4033215/saadq">
           StackOverflow
