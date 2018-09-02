@@ -43,13 +43,14 @@ function Home() {
       <div>
         <p>Hello, I'm Saad. I'm a software developer.</p>
         <p>
-          I'm an intern at{' '}
-          <Link href="https://www.rackspace.com/en-us">Rackspace</Link>. <br />
-          Previously, I've worked at{' '}
+          Currently, I'm a senior CS student at{' '}
+          <Link href="https://www.rutgers.edu">Rutgers University</Link> seeking full-time work. <br />
+          Previously, I've interned at{' '}
+          <Link href="https://rackspace.com">Rackspace</Link>,{' '}
           <Link href="https://mozilla.org">Mozilla</Link>,{' '}
           <Link href="https://www.codecademy.com">Codecademy</Link>,{' '}
-          <Link href="https://www.ieee.org/">IEEE</Link>, and{' '}
-          <Link href="https://www.jnj.com/">J&amp;J</Link>.
+          <Link href="https://www.ieee.org">IEEE</Link>, and{' '}
+          <Link href="https://www.jnj.com">J&amp;J</Link>.
         </p>
         <p>
           You can send me an <Link href="mailto:saad@saadq.com">email</Link> if

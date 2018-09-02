@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Link from 'gatsby-link'
+import resume from '../common/assets/resume.pdf'
 
 const StyledHeader = styled.header`
   display: flex;
@@ -43,6 +44,8 @@ const NavLink = styled(Link)`
   }
 `
 
+const Anchor: any = NavLink.withComponent('a')
+
 function Header() {
   return (
     <StyledHeader>
@@ -57,6 +60,9 @@ function Header() {
         <NavLink exact to="/projects" activeClassName="active">
           Projects
         </NavLink>
+        <Anchor href={resume}>
+          Resume
+        </Anchor>
       </Nav>
     </StyledHeader>
   )
