@@ -14,4 +14,4 @@ I was inspired to write this post after some learning some lessons from releasin
 
 In retrospect, this was a mistake. No feature (like lint rule customization) should be removed from a tool, unless there is some benefit gained in return. Removing style rules from the linter made sense because it encouraged the use of a code formatting tool like Prettier (which is more suitable for enforcing code style when compared to a linter). However, there was no benefit from removing the customization of other rules like `prefer-const`, etc. I've realized my mistake, and the next version of `lynt` will let the user have extra configuration for non-style rules.
 
-*Configuration is not a bad thing*, when done properly. When designing a tool, remember to make it have sensible defaults and to limit/simplify config options.
+_Configuration is not a bad thing_, when done properly. When designing a tool, remember to make it have sensible defaults and to limit/simplify config options.

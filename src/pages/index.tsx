@@ -44,7 +44,8 @@ function Home() {
         <p>Hello, I'm Saad. I'm a software developer.</p>
         <p>
           Currently, I'm a senior CS student at{' '}
-          <Link href="https://www.rutgers.edu">Rutgers University</Link> seeking full-time work. <br />
+          <Link href="https://www.rutgers.edu">Rutgers University</Link> seeking
+          full-time work. <br />
           Previously, I've interned at{' '}
           <Link href="https://rackspace.com">Rackspace</Link>,{' '}
           <Link href="https://mozilla.org">Mozilla</Link>,{' '}

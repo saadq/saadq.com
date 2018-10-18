@@ -60,9 +60,7 @@ function Header() {
         <NavLink exact to="/projects" activeClassName="active">
           Projects
         </NavLink>
-        <Anchor href={resume}>
-          Resume
-        </Anchor>
+        <Anchor href={resume}>Resume</Anchor>
       </Nav>
     </StyledHeader>
   )
