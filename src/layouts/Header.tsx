@@ -42,6 +42,15 @@ const NavLink = styled(Link)`
   &:hover {
     color: black;
   }
+
+  &::after {
+    display: block;
+    content: attr(data-text);
+    font-weight: bold;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+  }
 `
 
 const Anchor: any = NavLink.withComponent('a')
@@ -51,13 +60,18 @@ function Header() {
     <StyledHeader>
       <Logo to="/">saadq</Logo>
       <Nav>
-        <NavLink exact to="/" activeClassName="active">
+        <NavLink exact to="/" activeClassName="active" data-text="Home">
           Home
         </NavLink>
-        <NavLink exact to="/blog" activeClassName="active">
+        <NavLink exact to="/blog" activeClassName="active" data-text="Blog">
           Blog
         </NavLink>
-        <NavLink exact to="/projects" activeClassName="active">
+        <NavLink
+          exact
+          to="/projects"
+          activeClassName="active"
+          data-text="Projects"
+        >
           Projects
         </NavLink>
         <Anchor href={resume}>Resume</Anchor>
